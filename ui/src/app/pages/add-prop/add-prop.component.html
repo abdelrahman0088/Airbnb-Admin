@@ -1,0 +1,82 @@
+<p>
+    <mat-toolbar class="ttl">
+      <span>Add or Update Products</span>
+    </mat-toolbar>
+  </p>
+
+<form (ngSubmit)="AddProps()" #submitForm="ngForm">
+
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue() ">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Property Tilte" type="text" id="title" [(ngModel)]="prop.title"
+                #name="ngModel" name="title">
+        </mat-form-field>
+    </div>
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Property decription" type="text" id="description" [(ngModel)]="prop.description"
+                #name="ngModel" name="description">
+        </mat-form-field>
+    </div>
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Image</mat-label>
+            <input matInput placeholder="Property imageSrc" type="text" id="imageSrc" [(ngModel)]="prop.imageSrc"
+                #name="ngModel" name="imageSrc">
+        </mat-form-field>
+    </div>
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Category</mat-label>
+            <input matInput placeholder="Property category" type="text" id="category" [(ngModel)]="prop.category"
+                #name="ngModel" name="category">
+        </mat-form-field>
+    </div>
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Country</mat-label>
+            <input matInput placeholder="Property Location" type="text" id="locationValue" [(ngModel)]="prop.locationValue"
+                #name="ngModel" name="locationValue">
+        </mat-form-field>
+    </div>
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Room Count</mat-label>
+            <input matInput placeholder="Property RoomC ount" type="number" id="roomCount" [(ngModel)]="prop.roomCount"
+                #name="ngModel" name="roomCount">
+        </mat-form-field>
+    </div>
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Bathroom Count</mat-label>
+            <input matInput placeholder="Property Bathroom Count" type="number" id="bathroomCount" [(ngModel)]="prop.bathroomCount"
+                #name="ngModel" name="bathroomCount">
+        </mat-form-field>
+    </div>
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Guests Count</mat-label>
+            <input matInput placeholder="Property Gusets Count" type="number" id="guestCount" [(ngModel)]="prop.guestCount"
+                #name="ngModel" name="gusetCount">
+        </mat-form-field>
+    </div>
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="Property Price" type="number" id="price" [(ngModel)]="prop.price"
+                #name="ngModel" name="price">
+        </mat-form-field>
+    </div>
+    <div class="example-button-row">
+    
+        <button type="submit"  mat-button color="accent">Add / Update</button>
+       
+        <!-- <a mat-button routerLink=".">Link</a> -->
+      </div>
+
+</form>
+
+
+

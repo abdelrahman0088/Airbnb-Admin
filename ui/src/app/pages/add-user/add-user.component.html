@@ -1,0 +1,40 @@
+<p>
+    <mat-toolbar class="ttl">
+      <span>Add or Update Users</span>
+    </mat-toolbar>
+  </p>
+
+<form (ngSubmit)="AddUser()" #submitForm="ngForm">
+
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue() ">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="User Name" type="text" id="name" [(ngModel)]="users.name"
+                #name="ngModel" name="name">
+        </mat-form-field>
+    </div>
+    <div class="example-form-fields">
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="User Email" type="text" id="email" [(ngModel)]="users.email"
+                #name="ngModel" name="email">
+        </mat-form-field>
+    </div>
+    <div  class="example-form-fields" >
+        <mat-form-field class="mff" [floatLabel]="getFloatLabelValue()">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="User Password" type="text" id="hashedpassword" [(ngModel)]="users.hashedpassword"
+                #name="ngModel" name="hashedpassword">
+        </mat-form-field>
+    </div>
+ 
+    <div class="example-button-row">
+    
+        <button type="submit"  mat-button color="accent">Add / Update</button>
+       
+        <!-- <a mat-button routerLink=".">Link</a> -->
+        <!-- *ngIf="!id" -->
+      </div>
+
+</form>
+

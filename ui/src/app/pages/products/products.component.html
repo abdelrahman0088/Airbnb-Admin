@@ -1,0 +1,75 @@
+<p>
+    <mat-toolbar class="mtt">
+        <span>All Products</span>
+    </mat-toolbar>
+</p>
+<form>
+    <div class="row">
+      <div class="col">
+        <input class="form-control" id="inp" type="text" placeholder="Search Properties" (keyup)="onSearch($event)">
+    </div>
+      <div class="col">
+        <div class="example-button-row">
+            <button id="btn" (click)="clearSearch()" mat-button color="primary">Clear Search</button>
+        </div>
+          </div>
+    </div>
+  </form>
+
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" style="table-layout: fixed;
+    width: 100%;">
+
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef style="text-overflow: clip !important"> Tilte </th>
+            <td mat-cell *matCellDef="let element" > {{element.title}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+            <th class="hide" mat-header-cell *matHeaderCellDef style="text-overflow: clip !important"> Category </th>
+            <td class="hide" mat-cell *matCellDef="let element"> {{element.category}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+            <th class="hide" mat-header-cell *matHeaderCellDef style="text-overflow: clip !important"> Country </th>
+            <td class="hide" mat-cell *matCellDef="let element"> {{element.locationValue}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="rooms">
+            <th class="hide" mat-header-cell *matHeaderCellDef style="text-overflow: clip !important"> Rooms </th>
+            <td class="hide" mat-cell *matCellDef="let element"> {{element.roomCount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="guests">
+            <th class="hide" mat-header-cell *matHeaderCellDef style="text-overflow: clip !important"> Guests </th>
+            <td class="hide" mat-cell *matCellDef="let element"> {{element.guestCount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th class="hide" mat-header-cell *matHeaderCellDef style="text-overflow: clip !important"> Price </th>
+            <td class="hide" mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef style="text-overflow: clip !important"> Update </th>
+            <td mat-cell *matCellDef="let element"> <button mat-mini-fab matTooltip="Accent" color="primary"
+                    (click)="updateProps(element._id)" aria-label="Example mini fab with a heart icon">
+                    <mat-icon>update</mat-icon>
+                </button> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef style="text-overflow: clip !important"> Delete </th>
+            <td mat-cell *matCellDef="let element"> <button mat-mini-fab matTooltip="Warn" color="warn"
+                    (click)="deleteProps(element._id)" aria-label="Example mini fab with a heart icon">
+                    <mat-icon>delete</mat-icon>
+                </button> </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>

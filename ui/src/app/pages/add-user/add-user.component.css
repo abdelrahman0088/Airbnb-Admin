@@ -1,0 +1,32 @@
+.example-form-fields {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .mff{
+
+    width: 70%;
+    margin-left: 4%;
+  }
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+  width: 14%;
+    background-color: #000000;
+    margin-left: 60%;
+    margin-bottom: 4vw;
+
+
+}
+
+.example-disabled {
+  display: inline-block;
+}
+
+.ttl{
+  margin-top: 1vw;
+  background-color: darkblue;
+  color: white;
+  font-family: cursive;
+}

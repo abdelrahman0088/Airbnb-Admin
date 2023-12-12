@@ -1,0 +1,25 @@
+
+  
+  .example-button-row button,
+  .example-button-row a {
+    margin-right: 8px;
+  }
+  
+  .example-disabled {
+    display: inline-block;
+  }
+  
+  .mtt {
+  
+    margin-top: 1vw;
+    color: white;
+    font-family: cursive;
+    background-color: darkblue;
+  }
+
+  
+@media (max-width: 768px) {
+  .hide {
+    display: none !important;
+  }
+}

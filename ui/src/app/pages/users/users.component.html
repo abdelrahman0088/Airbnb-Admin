@@ -1,0 +1,64 @@
+<p>
+  <mat-toolbar class="mtt">
+    <span>All Users</span>
+  </mat-toolbar>
+</p>
+<form>
+  <div class="row">
+    <div class="col">
+      <input class="form-control" id="inp" type="text" placeholder="Search Users" (keyup)="onSearch($event)">
+  </div>
+    <div class="col">
+      <div class="example-button-row">
+          <button id="btn" (click)="clearSearch()" mat-button color="primary">Clear Search</button>
+      </div>
+        </div>
+  </div>
+</form>
+
+<div  class="mat-elevation-z8 table">
+  <table mat-table [dataSource]="dataSource" style="table-layout: fixed;
+  width: 100%;">
+
+      <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef style="text-overflow: clip !important;"> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+          <th class="hide" mat-header-cell *matHeaderCellDef style="text-overflow: clip !important;"> Email </th>
+          <td class="hide" mat-cell *matCellDef="let element" > {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="image">
+          <th class="hide" mat-header-cell *matHeaderCellDef style="text-overflow: clip !important;"> Image </th>
+          <td class="hide" mat-cell *matCellDef="let element"> {{element.image}} </td>
+      </ng-container>
+      <ng-container matColumnDef="createdAt">
+        <th class="hide" mat-header-cell *matHeaderCellDef style="text-overflow: clip !important;"> Created </th>
+        <td class="hide" mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+    </ng-container>
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef style="text-overflow: clip !important;"> Update </th>
+        <td mat-cell *matCellDef="let element"> <button mat-mini-fab matTooltip="Accent" color="primary"
+            (click)="updateUsers(element._id)" aria-label="Example mini fab with a heart icon">
+                <mat-icon>update</mat-icon>
+            </button> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef style="text-overflow: clip !important; overflow: visible;"> Delete </th>
+        <td mat-cell *matCellDef="let element"> <button mat-mini-fab matTooltip="Warn" color="warn"
+            (click)="deleteUsers(element._id)" aria-label="Example mini fab with a heart icon">
+                <mat-icon>delete</mat-icon>
+            </button> </td>
+    </ng-container>
+
+    
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

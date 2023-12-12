@@ -1,0 +1,7 @@
+.bg {
+    background-image: url(https://news.airbnb.com/wp-content/uploads/sites/4/2020/04/Airbnb_Logo_Over_Gradient.png);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
